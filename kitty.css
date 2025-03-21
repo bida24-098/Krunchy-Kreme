@@ -1,0 +1,141 @@
+/* Define Krispy Kreme brand colors */
+:root {
+    --krispy-green: #0fd895;
+    --krispy-red: #d83866;
+    --krispy-pink: #FFC0CB;
+    --krispy-white: #FFFFFF;
+}
+
+/* Reset margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--krispy-white);
+    color: var(--krispy-green);
+}
+body {
+    background-image: url('https://i.pinimg.com/736x/56/08/22/5608226b58bbf79234c098bb657ed1bd.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+/* Header styling */
+header {
+    background-color: var(--krispy-green);
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin-left: auto;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--krispy-white);
+    font-weight: bold;
+}
+
+/* Hero section styling */
+.hero {
+    background-color: var(--krispy-red);
+    color: var(--krispy-white);
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.hero h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2em;
+}
+
+/* Menu section styling */
+#menu {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#menu h2 {
+    font-size: 2em;
+    color: var(--krispy-red);
+    margin-bottom: 20px;
+}
+
+.menu-item {
+    display: inline-block;
+    width: 200px;
+    margin: 20px;
+    text-align: center;
+}
+
+.menu-item img {
+    width: 100%;
+    height: auto;
+    border: 5px solid var(--krispy-pink);
+}
+
+.menu-item h3 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+.menu-item p {
+    font-size: 1em;
+}
+
+/* Promotions section styling */
+#promotions {
+    background-color: var(--krispy-green);
+    color: var(--krispy-white);
+    padding: 50px 20px;
+    text-align: center;
+}
+
+#promotions h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.promotion-item {
+    margin: 20px 0;
+}
+
+.promotion-item h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.promotion-item p {
+    font-size: 1em;
+}
+
+/* Footer styling */
+footer {
+    background-color: var(--krispy-red);
+    color: var(--krispy-white);
+    text-align: center;
+    padding: 10px 20px;
+}
