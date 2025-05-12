@@ -1,9 +1,9 @@
 /* Define Krispy Kreme brand colors */
 :root {
-    --krispy-green: #006d49;
-    --krispy-red: #ff0048;
-    --krispy-pink: #fd617b;
-    --krispy-white: #FFFFFF;
+    --krunchy-maroon: #3a0707;
+    --krunchyy-orange: #e25707;
+    --krunchy-brown: #4d2002;
+    --krunchy-white: #FFFFFF;
 }
 
 /* Reset margin and padding */
@@ -16,19 +16,21 @@
 /* Body styling */
 body {
     font-family: Arial, sans-serif;
-    background-color: var(--krispy-white);
-    color: var(--krispy-red);
+    background-color: var(--krunchy-maroon);
+    color: var(--krunchy-brown);
 }
 body {
-    background-image: url('https://i.pinimg.com/736x/56/08/22/5608226b58bbf79234c098bb657ed1bd.jpg');
+    background-image: url('images/Осенняя\ набережная.jpeg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed;
+    background-attachment:fixed;
     background-position: center;
 }
+  
+ 
 /* Header styling */
 header {
-    background-color: var(--krispy-green);
+    background-color: var(--krunchy-brown);
     display: flex;
     align-items: center;
     padding: 10px 20px;
@@ -51,13 +53,13 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: var(--krispy-white);
+    color: var(--krunchyy-orange);
     font-weight: bold;
 }
 
 /* Hero section styling */
 .hero {
-    background-color: var(--krispy-red);
+    background-color: var(--krunchyy-orange);
     color: var(--krispy-white);
     text-align: center;
     padding: 50px 20px;
@@ -80,7 +82,7 @@ nav ul li a {
 
 #menu h2 {
     font-size: 2em;
-    color: var(--krispy-red);
+    color: var(--krunchyy-orange);
     margin-bottom: 20px;
 }
 
@@ -94,7 +96,7 @@ nav ul li a {
 .menu-item img {
     width: 100%;
     height: auto;
-    border: 5px solid var(--krispy-pink);
+    border: 5px solid var(--krunchy-maroon);
 }
 
 .menu-item h3 {
@@ -108,8 +110,8 @@ nav ul li a {
 
 /* Promotions section styling */
 #promotions {
-    background-color: var(--krispy-green);
-    color: var(--krispy-white);
+    background-color: var(--krunchy-maroon);
+    color: var(--krunchy-white);
     padding: 50px 20px;
     text-align: center;
 }
@@ -134,8 +136,12 @@ nav ul li a {
 
 /* Footer styling */
 footer {
-    background-color: var(--krispy-red);
-    color: var(--krispy-white);
+    background-color: var(--krunchyy-orange);
+    color: var(--krunchyy-orange);
     text-align: center;
     padding: 10px 20px;
 }
+.About-Us h1 {
+    text-align: center;
+}
+     
