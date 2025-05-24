@@ -12,6 +12,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+header { 
+    <img src="https://i.pinimg.com/736x/1b/15/a2/1b15a2e83e6cd67da3ac09b5369828eb.jpg" alt="Krusty Kreme Logo" class="logo">
+}
 
 /* Body styling */
 body {
