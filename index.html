@@ -12,10 +12,8 @@
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                >
                 <li><a href="#menu">Menu</a></li>
                 <li><a href="#promotions">Promotions</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
                 <li><a href="about.html">About Us</a></li>
             </ul>
         </nav>
@@ -57,12 +55,69 @@
             <h3>Barbie Doughnuts</h3>
             <p>Celebrate Barbie's 65th anniversary with our special limited-time collection of four Barbie-themed doughnuts. Available from September 3, 2024.</p>
         </div>
-    </section>
+  
+    
+    <style>
+    .social-buttons {
+      display: flex;
+      flex-direction:row /* Makes buttons vertical */
+      gap: 20 px;              /* Spacing between buttons */
+      
+    }
+
+    .social-buttons a {
+      text-decoration: none;
+    }
+
+    .btn {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      color: white;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    }
+
+    .instagram { background-color: #E1306C; }
+    .facebook  { background-color: #3b5998; }
+    .twitter   { background-color: #1DA1F2; }
+  </style>
+</head>
+<body>
+
+  <div class="social-buttons">
+    <a href="https://instagram.com/yourusername" target="_blank">
+      <div class="btn instagram"><i class="fab fa-instagram"></i></div>
+    </a>
+    <a href="https://facebook.com/yourusername" target="_blank">
+      <div class="btn facebook"><i class="fab fa-facebook-f"></i></div>
+    </a>
+    <a href="https://twitter.com/yourusername" target="_blank">
+      <div class="btn twitter"><i class="fab fa-twitter"></i></div>
+    </a>
+  </div>
+</section>
     <footer>
-        <p>&copy; 2025 Krusty Kreme Café. All rights reserved.</p>
+        <p>&copy; 2025 Krunchy Kreme Café. All rights reserved.</p>
     </footer>
+    <style>
+        footer {
+    background-color: var(--krunchyy-orange);
+    color: var(--krunchyy-maroon);
+    text-align: center;
+    padding: 10px;
+}
+    </style>
 </body>
 </html>
-
 
 
