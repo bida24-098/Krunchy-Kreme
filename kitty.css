@@ -1,9 +1,10 @@
 /* Define Krispy Kreme brand colors */
 :root {
     --krunchy-maroon: #3a0707;
-    --krunchyy-orange: #e25707;
+    --krunchyy-orange: #df5200;
     --krunchy-brown: #4d2002;
     --krunchy-white: #FFFFFF;
+    --krunchy-black:
 }
 
 /* Reset margin and padding */
@@ -17,10 +18,10 @@
 body {
     font-family: Arial, sans-serif;
     background-color: var(--krunchy-maroon);
-    color: var(--krunchy-brown);
+    color: var(--krunchyy-brown);
 }
 body {
-    background-image: url('images/Осенняя\ набережная.jpeg');
+    background-image: url('images/Free\ fall\ themed\ desktop\ background.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment:fixed;
@@ -37,7 +38,7 @@ header {
 }
 
 .logo {
-    width: 150px;
+    width: 100px;
     height: auto;
 }
 
@@ -106,6 +107,15 @@ nav ul li a {
     margin: 20px;
     text-align: center;
 }
+.hover-pic {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+.hover-pic:hover {
+  transform: rotate(3deg);
+}
 
 .menu-item img {
     width: 100%;
@@ -148,14 +158,3 @@ nav ul li a {
     font-size: 1em;
 }
 
-/* Footer styling */
-footer {
-    background-color: var(--krunchyy-orange);
-    color: var(--krunchyy-orange);
-    text-align: center;
-    padding: 10px 20px;
-}
-.About-Us h1 {
-    text-align: center;
-}
-     
