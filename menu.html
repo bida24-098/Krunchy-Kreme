@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | Krunchy Kreme Café</title>
+    <style>
+        :root {
+            --krunchy-maroon: #3a0707;
+            --krunchy-orange: #df5200;
+            --krunchy-brown: #4d2002;
+            --krunchy-cream: #fff5e6;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--krunchy-cream);
+            color: var(--krunchy-maroon);
+        }
+
+        header {
+            background-color: var(--krunchy-brown);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .logo {
+            max-width: 150px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        nav a {
+            color: var(--krunchy-orange);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .menu-hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+                        url('https://images.unsplash.com/photo-1599785209793-80c17a2095ae');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .menu-hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+        }
+
+        .menu-hero p {
+            font-size: 1.2rem;
+        }
+
+        .menu-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .menu-section {
+            margin-bottom: 50px;
+        }
+
+        .menu-section h2 {
+            color: var(--krunchy-orange);
+            font-size: 2rem;
+            border-bottom: 3px solid var(--krunchy-brown);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .menu-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .menu-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .menu-card .details {
+            padding: 15px;
+        }
+
+        .menu-card h3 {
+            margin: 0 0 10px;
+            color: var(--krunchy-maroon);
+        }
+
+        .menu-card p {
+            margin: 0 0 5px;
+            color: #555;
+        }
+
+        .menu-card .price {
+            color: var(--krunchy-orange);
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        footer {
+            background-color: var(--krunchy-maroon);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://i.pinimg.com/736x/1b/15/a2/1b15a2e83e6cd67da3ac09b5369828eb.jpg" alt="Krunchy Kreme Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="promotions.html">Promotions</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="feedback.html">Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="menu-hero">
+        <h1>Explore Our Menu</h1>
+        <p>Decadent cakes, delightful cupcakes, doughnuts & drinks – all made fresh!</p>
+    </section>
+
+    <div class="menu-container">
+        <div class="menu-section">
+            <h2>Cakes</h2>
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587" alt="Chocolate Fudge Cake">
+                    <div class="details">
+                        <h3>Chocolate Fudge Cake</h3>
+                        <p>Layered with ganache and fudge frosting.</p>
+                        <p class="price">P65.00 per slice</p>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <img src="https://images.unsplash.com/photo-1601979031925-3ccde94ab17a" alt="Red Velvet Cake">
+                    <div class="details">
+                        <h3>Red Velvet Cake</h3>
+                        <p>Classic red velvet with cream cheese frosting.</p>
+                        <p class="price">P70.00 per slice</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h2>Cupcakes</h2>
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <img src="https://images.unsplash.com/photo-1589308078054-832c89f29010" alt="Vanilla Cupcake">
+                    <div class="details">
+                        <h3>Vanilla Cupcake</h3>
+                        <p>Fluffy with buttercream icing.</p>
+                        <p class="price">P20.00 each</p>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <img src="https://images.unsplash.com/photo-1565958011702-44cbf57b23d8" alt="Chocolate Cupcake">
+                    <div class="details">
+                        <h3>Chocolate Cupcake</h3>
+                        <p>Rich cocoa topped with chocolate frosting.</p>
+                        <p class="price">P22.00 each</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h2>Beverages</h2>
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b" alt="Iced Coffee">
+                    <div class="details">
+                        <h3>Iced Coffee</h3>
+                        <p>Chilled coffee with your choice of cream or milk.</p>
+                        <p class="price">P30.00</p>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <img src="https://images.unsplash.com/photo-1583337130417-ded1fc8c41a9" alt="Fruit Juice">
+                    <div class="details">
+                        <h3>Fresh Fruit Juice</h3>
+                        <p>Orange, mango, or pineapple – fresh & vibrant.</p>
+                        <p class="price">P25.00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-section">
+            <h2>Doughnuts</h2>
+            <div class="menu-grid">
+                <div class="menu-card">
+                    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587" alt="Original Glazed">
+                    <div class="details">
+                        <h3>Original Glazed</h3>
+                        <p>Light, fluffy, and perfectly glazed.</p>
+                        <p class="price">P10.00 each</p>
+                    </div>
+                </div>
+                <div class="menu-card">
+                    <img src="https://images.unsplash.com/photo-1578985544654-3dc30fcf69b8" alt="Chocolate Doughnut">
+                    <div class="details">
+                        <h3>Chocolate Covered</h3>
+                        <p>Soft doughnut dipped in smooth chocolate.</p>
+                        <p class="price">P12.00 each</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Krunchy Kreme Café. All rights reserved.</p>
+    </footer>
+</body>
+</html>
