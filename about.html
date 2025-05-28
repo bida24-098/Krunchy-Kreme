@@ -1,44 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="kitty.css"
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About Us | Krunchy Kreme Café</title>
+  <style>
+    :root {
+      --krunchy-maroon: #3a0707;
+      --krunchy-orange: #df5200;
+      --krunchy-brown: #4d2002;
+      --krunchy-cream: #fff5e6;
+      --krunchy-beige: #fdf3e7;
+    }
 
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--krunchy-cream);
+      color: var(--krunchy-maroon);
+    }
+
+    header {
+      background-color: var(--krunchy-brown);
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    .logo {
+      width: 120px;
+      margin-bottom: 10px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      margin: 10px 0 0 0;
+      gap: 30px;
+    }
+
+    nav a {
+      color: var(--krunchy-orange);
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .about-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .about-text {
+      flex: 1 1 500px;
+      padding: 20px;
+    }
+
+    .about-text h2 {
+      color: var(--krunchy-orange);
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .about-text p {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #333;
+    }
+
+    .about-image {
+      flex: 1 1 300px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .about-image img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    footer {
+      background-color: var(--krunchy-maroon);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+    }
+  </style>
 </head>
-
 <body>
 
-<header>
-   <img src="https://i.pinimg.com/736x/1b/15/a2/1b15a2e83e6cd67da3ac09b5369828eb.jpg" alt="Krusty Kreme Logo" class="logo">
-<h1>About Us</h1>
-  <nav>
-    <ul>
-
+  <header>
+    <img src="https://i.pinimg.com/736x/1b/15/a2/1b15a2e83e6cd67da3ac09b5369828eb.jpg" alt="Krunchy Kreme Logo" class="logo">
+    <h1>About Us</h1>
+    <nav>
+      <ul>
         <li><a href="index.html">Home</a></li> 
         <li><a href="menu.html">Menu</a></li>
         <li><a href="promotions.html">Promotions</a></li>
         <li><a href="about.html">About Us</a></li>
         <li><a href="feedback.html">Feedback</a></li>
-    </ul>
-
-  </nav>
-</header>
-  
-</head>
-<body>
-
-  <header>
-    <h1>Krunchy Kreme</h1>
+      </ul>
+    </nav>
   </header>
 
-  <div style="display: flex; justify-content: space-between; align-items: center;">
-  <div style="text-align: left;">
-    <h2>About us</h2>
-    <p>Krunchy Kreme was born out of a deep love for comfort, creativity, and community. What started as a simple passion for baking and brewing quickly became a vision to bring people together over incredible food and unforgettable moments.I started this cafe because I saw a need for a space where warmth meets flavor — where every bite of a freshly baked croissant or sip of a smooth cappuccino could lift spirits. Krunchy Kreme isn’t just about coffee and pastries — it’s about building a little haven in the heart of the city where everyone feels welcome.Each item on our menu is made with hand-picked ingredients, lots of heart, and a dash of creativity. From early-morning regulars to curious wanderers, everyone finds a place here. We invite you to stop by, say hello, and savor something delicious. Welcome to the Krunchy Kreme family!</p>
-  </div>
+  <section class="about-section">
+    <div class="about-text">
+      <h2>Welcome to Krunchy Kreme</h2>
+      <p>
+        Krunchy Kreme was born out of a deep love for comfort, creativity, and community.
+        What started as a simple passion for baking and brewing quickly became a vision to bring people together
+        over incredible food and unforgettable moments.
+      </p>
+      <p>
+        We created this café to be a space where warmth meets flavor — where every bite of a freshly baked croissant
+        or sip of a smooth cappuccino could lift your spirits.
+      </p>
+      <p>
+        Each item on our menu is crafted with hand-picked ingredients, heart, and a dash of creativity.
+        From early-morning regulars to curious wanderers, everyone finds a place here.
+        Come say hello and savor something delicious — welcome to the Krunchy Kreme family!
+      </p>
+    </div>
+    <div class="about-image">
+      <img src="https://i.pinimg.com/736x/5f/f3/85/5ff385fb1f78f0b234fe36c96645d872.jpg" alt="Krunchy Kreme Café Vibe" />
+    </div>
+  </section>
 
-  <img src="https://i.pinimg.com/736x/5f/f3/85/5ff385fb1f78f0b234fe36c96645d872.jpg" alt="A description" style="width: 200px; height: auto;" width="50%" height="50%">
-</div>
+  <footer>
+    <p>&copy; 2024 Krunchy Kreme Café. All rights reserved.</p>
+  </footer>
+
 </body>
 </html>
