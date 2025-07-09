@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signature Cakes | Krunchy Kreme Café</title>
+    <style>
+        :root {
+            --maroon: #3a0707;
+            --orange: #df5200;
+            --brown: #4d2002;
+            --cream: #fff5e6;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            background-color: var(--cream);
+            color: var(--maroon);
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--brown);
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .logo {
+            max-width: 180px;
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 15px;
+        }
+        
+        nav a {
+            color: var(--orange);
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: white;
+        }
+        
+        .cake-hero {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('https://images.unsplash.com/photo-1578985545062-69928b1d9587');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        
+        .cake-hero h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .cake-gallery {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+        
+        .gallery-title {
+            text-align: center;
+            color: var(--orange);
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .cake-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .cake-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .cake-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .cake-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .cake-info {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .cake-name {
+            color: var(--orange);
+            margin: 0 0 10px;
+            font-size: 1.4rem;
+        }
+        
+        .cake-price {
+            color: var(--maroon);
+            font-weight: bold;
+            margin: 5px 0;
+        }
+        
+        .cake-sizes {
+            display: flex;
+            gap: 10px;
+            margin: 10px 0;
+            flex-wrap: wrap;
+        }
+        
+        .size-option {
+            border: 1px solid var(--orange);
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .size-option:hover, .size-option.selected {
+            background-color: var(--orange);
+            color: white;
+        }
+        
+        .cake-desc {
+            color: #555;
+            margin: 10px 0 15px;
+            font-size: 0.95rem;
+            flex-grow: 1;
+        }
+        
+        .customize-btn {
+            display: block;
+            text-align: center;
+            background-color: var(--orange);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            margin-top: auto;
+        }
+        
+        .customize-btn:hover {
+            background-color: var(--maroon);
+        }
+        
+        .customize-options {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        
+        .customize-options h4 {
+            margin-top: 0;
+            color: var(--maroon);
+        }
+        
+        .option-group {
+            margin-bottom: 10px;
+        }
+        
+        .option-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        select, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .add-to-cart {
+            background-color: var(--maroon);
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+            transition: background-color 0.3s;
+        }
+        
+        .add-to-cart:hover {
+            background-color: #2a0505;
+        }
+        
+        footer {
+            background-color: var(--brown);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .cake-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .cake-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://i.pinimg.com/736x/1b/15/a2/1b15a2e83e6cd67da3ac09b5369828eb.jpg" alt="Krunchy Kreme Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="cakes.html">Cakes</a></li>
+                <li><a href="promotions.html">Promotions</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="cake-hero">
+        <h1>Our Signature Cakes</h1>
+        <p>Custom creations made fresh daily</p>
+    </section>
+    
+    <section class="cake-gallery">
+        <h2 class="gallery-title">Celebration Cakes</h2>
+        <div class="cake-grid">
+            <!-- Cake 1 -->
+            <div class="cake-card">
+                <img src="https://images.unsplash.com/photo-1542828778-816b9c322df1" alt="Chocolate Fudge Cake" class="cake-image">
+                <div class="cake-info">
+                    <h3 class="cake-name">Chocolate Indulgence</h3>
+                    <p class="cake-price">Starting at $24.99</p>
+                    <div class="cake-sizes">
+                        <div class="size-option">6"</div>
+                        <div class="size-option selected">8"</div>
+                        <div class="size-option">10"</div>
+                        <div class="size-option">12"</div>
+                    </div>
+                    <p class="cake-desc">Three layers of rich chocolate cake with fudge filling and chocolate ganache frosting. Perfect for chocolate lovers.</p>
+                    <a href="#" class="customize-btn" onclick="toggleCustomize(this)">Customize</a>
+                    <div class="customize-options">
+                        <h4>Customization Options</h4>
+                        <div class="option-group">
+                            <label for="choc-frosting">Frosting Type:</label>
+                            <select id="choc-frosting">
+                                <option>Chocolate Ganache</option>
+                                <option>Chocolate Buttercream</option>
+                                <option>Whipped Chocolate</option>
+                            </select>
+                        </div>
+                        <div class="option-group">
+                            <label for="choc-filling">Filling:</label>
+                            <select id="choc-filling">
+                                <option>Chocolate Fudge</option>
+                                <option>Raspberry Preserves</option>
+                                <option>Caramel</option>
+                            </select>
+                        </div>
+                        <div class="option-group">
+                            <label for="choc-special">Special Instructions:</label>
+                            <textarea id="choc-special" rows="2"></textarea>
+                        </div>
+                        <button class="add-to-cart">Add to Order</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Cake 2 -->
+            <div class="cake-card">
+                <img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d" alt="Red Velvet Cake" class="cake-image">
+                <div class="cake-info">
+                    <h3 class="cake-name">Classic Red Velvet</h3>
+                    <p class="cake-price">Starting at $26.99</p>
+                    <div class="cake-sizes">
+                        <div class="size-option">6"</div>
+                        <div class="size-option selected">8"</div>
+                        <div class="size-option">10"</div>
+                    </div>
+                    <p class="cake-desc">Traditional red velvet with cream cheese frosting. Decorated with your choice of piping.</p>
+                    <a href="#" class="customize-btn" onclick="toggleCustomize(this)">Customize</a>
+                    <div class="customize-options">
+                        <h4>Customization Options</h4>
+                        <div class="option-group">
+                            <label for="rv-frosting">Frosting Style:</label>
+                            <select id="rv-frosting">
+                                <option>Classic Cream Cheese</option>
+                                <option>Swirled Design</option>
+                                <option>Naked Cake Style</option>
+                            </select>
+                        </div>
+                        <div class="option-group">
+                            <label for="rv-decoration">Decoration:</label>
+                            <select id="rv-decoration">
+                                <option>Standard Piping</option>
+                                <option>Fresh Berries</option>
+                                <option>Edible Flowers</option>
+                            </select>
+                        </div>
+                        <div class="option-group">
+                            <label for="rv-special">Special Instructions:</label>
+                            <textarea id="rv-special" rows="2"></textarea>
+                        </div>
+                        <button class="add-to-cart">Add to Order</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Cake 3 -->
+            <div class="cake-card">
+                <img src="https://images.unsplash.com/photo-1558301211-0d8c8ddee6ec" alt="Strawberry Cake" class="cake-image">
+                <div class="cake-info">
+                    <h3 class="cake-name">Strawberry Dream</h3>
+                    <p class="cake-price">Starting at $28.99</p>
+                    <div class="cake-sizes">
+                        <div class="size-option">6"</div>
+                        <div class="size-option selected">8"</div>
+                        <div class="size-option">10"</div>
+                        <div class="size-option">12"</div>
+                    </div>
+                    <p class="cake-desc">Vanilla cake layered with fresh strawberry filling and buttercream frosting.</p>
+                    <a href="#" class="customize-btn" onclick="toggleCustomize(this)">Customize</a>
+                    <div class="customize-options">
+                        <h4>Customization Options</h4>
+                        <div class="option-group">
+                            <label for="straw-filling">Filling Amount:</label>
+                            <select id="straw-filling">
+                                <option>Standard</option>
+                                <option>Extra Strawberry</option>
+                                <option>Light Filling</option>
+                            </select>
+                        </div>
+                        <div class="option-group">
+                            <label for="straw-frosting">Frosting:</label>
+                            <select id="straw-frosting">
+                                <option>Vanilla Buttercream</option>
+                                <option>Strawberry Buttercream</option>
+                                <option>Whipped Cream</option>
+                            </select>
+                        </div>
+                        <div class="option-group">
+                            <label for="straw-special">Special Instructions:</label>
+                            <textarea id="straw-special" rows="2"></textarea>
+                        </div>
+                        <button class="add-to-cart">Add to Order</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Additional cakes would follow the same pattern -->
+            <!-- Cake 4 -->
+            <div class="cake-card">
+                <img src="https://images.unsplash.com/photo-1562440499-64c9a111f713" alt="Carrot Cake" class="cake-image">
+                <div class="cake-info">
+                    <h3 class="cake-name">Spiced Carrot</h3>
+                    <p class="cake-price">Starting at $25.99</p>
+                    <div class="cake-sizes">
+                        <div class="size-option">6"</div>
+                        <div class="size-option selected">8"</div>
+                        <div class="size-option">10"</div>
+                    </div>
+                    <p class="cake-desc">Moist carrot cake with walnuts, raisins, and cream cheese frosting.</p>
+                    <a href="#" class="customize-btn" onclick="toggleCustomize(this)">Customize</a>
+                    <div class="customize-options">
+                        <h4>Customization Options</h4>
+                        <div class="option-group">
+                            <label for="carrot-nuts">Nuts:</label>
+                            <select id="carrot-nuts">
+                                <option>With Walnuts</option>
+                                <option>Without Walnuts</option>
+                                <option>Pecans Instead</option>
+                            </select>
+                        </div>
+                        <div class="option-group">
+                            <label for="carrot-frosting">Frosting:</label>
+                            <select id="carrot-frosting">
+                                <option>Cream Cheese</option>
+                                <option>Vanilla Buttercream</option>
+                            </select>
+                        </div>
+                        <div class="option-group">
+                            <label for="carrot-special">Special Instructions:</label>
+                            <textarea id="carrot-special" rows="2"></textarea>
+                        </div>
+                        <button class="add-to-cart">Add to Order</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Cake 5 -->
+            <div class="cake-card">
+                <img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d" alt="Lemon Blueberry" class="cake-image">
+                <div class="cake-info">
+                    <h3 class="cake-name">Lemon Blueberry</h3>
+                    <p class="cake-price">Starting at $27.99</p>
+                    <div class="cake-sizes">
+                        <div class="size-option">6"</div>
+                        <div class="size-option selected">8"</div>
+                        <div class="size-option">10"</div>
+                    </div>
+                    <p class="cake-desc">Zesty lemon cake with blueberry compote filling and lemon glaze.</p>
+                    <a href="#" class="customize-btn" onclick="toggleCustomize(this)">Customize</a>
+                    <div class="customize-options">
+                        <h4>Customization Options</h4>
+                        <div class="option-group">
+                            <label for="lemon-glaze">Glaze:</label>
+                            <select id="lemon-glaze">
+                                <option>Lemon</option>
+                                <option>Vanilla</option>
+                                <option>None</option>
+                            </select>
+                        </div>
+                        <div class="option-group">
+                            <label for="lemon-filling">Filling:</label>
+                            <select id="lemon-filling">
+                                <option>Blueberry Compote</option>
+                                <option>Lemon Curd</option>
+                                <option>Both</option>
+                            </select>
+                        </div>
+                        <div class="option-group">
+                            <label for="lemon-special">Special Instructions:</label>
+                            <textarea id="lemon-special" rows="2"></textarea>
+                        </div>
+                        <button class="add-to-cart">Add to Order</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Cake 6 -->
+            <div class="cake-card">
+                <img src="https://images.unsplash.com/photo-1558326567-98ae2405596b" alt="Tiramisu" class="cake-image">
+                <div class="cake-info">
+                    <h3 class="cake-name">Tiramisu</h3>
+                    <p class="cake-price">Starting at $29.99</p>
+                    <div class="cake-sizes">
+                        <div class="size-option">6"</div>
+                        <div class="size-option selected">8"</div>
+                        <div class="size-option">10"</div>
+                    </div>
+                    <p class="cake-desc">Classic Italian dessert with layers of coffee-soaked ladyfingers and mascarpone.</p>
+                    <a href="#" class="customize-btn" onclick="toggleCustomize(this)">Customize</a>
+                    <div class="customize-options">
+                        <h4>Customization Options</h4>
+                        <div class="option-group">
+                            <label for="tira-coffee">Coffee Strength:</label>
+                            <select id="tira-coffee">
+                                <option>Regular</option>
+                                <option>Extra Strong</option>
+                                <option>Decaf</option>
+                            </select>
+                        </div>
+                        <div class="option-group">
+                            <label for="tira-alcohol">Alcohol:</label>
+                            <select id="tira-alcohol">
+                                <option>With Marsala Wine</option>
+                                <option>Without Alcohol</option>
+                            </select>
+                        </div>
+                        <div class="option-group">
+                            <label for="tira-special">Special Instructions:</label>
+                            <textarea id="tira-special" rows="2"></textarea>
+                        </div>
+                        <button class="add-to-cart">Add to Order</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Cake 7 -->
+            <div class="cake-card">
+                <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e" alt="Black Forest" class="cake-image">
+                <div class="cake-info">
+                    <h3 class="cake-name">Black Forest</h3>
+                    <p class="cake-price">Starting at $30.99</p>
+                    <div class="cake-sizes">
+                        <div class="size-option">6"</div>
+                        <div class="size-option selected">8"</div>
+                        <div class="size-option">10"</div>
+                    </div>
+                    <p class="cake-desc">Chocolate cake with cherry filling and whipped cream frosting.</p>
+                    <a href="#" class="customize-btn" onclick="toggleCustomize(this)">Customize</a>
+                    <div class="customize-options">
+                        <h4>Customization Options</h4>
+                        <div class="option-group">
+                            <label for="bf-cherries">Cherries:</label>
+                            <select id="bf-cherries">
+                                <option>With Cherries</option>
+                                <option>Extra Cherries</option>
+                                <option>Without Cherries</option>
+                            </select>
+                        </div>
+                        <div class="option-group">
+                            <label for="bf-chocolate">Chocolate:</label>
+                            <select id="bf-chocolate">
+                                <option>Dark Chocolate Shavings</option>
+                                <option>Milk Chocolate</option>
+                                <option>White Chocolate</option>
+                            </select>
+                        </div>
+                        <div class="option-group">
+                            <label for="bf-special">Special Instructions:</label>
+                            <textarea id="bf-special" rows="2"></textarea>
+                        </div>
+                        <button class="add-to-cart">Add to Order</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Cake 8 -->
+            <div class="cake-card">
+                <img src="https://images.unsplash.com/photo-1558002038-1055907df827" alt="Vanilla Bean" class="cake-image">
+                <div class="cake-info">
+                    <h3 class="cake-name">Vanilla Bean</h3>
+                    <p class="cake-price">Starting at $22.99</p>
+                    <div class="cake-sizes">
+                        <div class="size-option">6"</div>
+                        <div class="size-option selected">8"</div>
+                        <div class="size-option">10"</div>
+                        <div class="size-option">12"</div>
+                    </div>
+                    <p class="cake-desc">Classic vanilla cake with real vanilla bean specks and buttercream.</p>
+                    <a href="#" class="customize-btn" onclick="toggleCustomize(this)">Customize</a>
+                    <div class="customize-options">
+                        <h4>Customization Options</h4>
+                        <div class="option-group">
+                            <label for="vanilla-frosting">Frosting:</label>
+                            <select id="vanilla-frosting">
+                                <option>Vanilla Buttercream</option>
+                                <option>Chocolate Buttercream</option>
+                                <option>Cream Cheese</option>
+                            </select>
+                        </div>
+                        <div class="option-group">
+                            <label for="vanilla-filling">Filling:</label>
+                            <select id="vanilla-filling">
+                                <option>None</option>
+                                <option>Raspberry</option>
+                                <option>Lemon Curd</option>
+                                <option>Chocolate Ganache</option>
+                            </select>
+                        </div>
+                        <div class="option-group">
+                            <label for="vanilla-special">Special Instructions:</label>
+                            <textarea id="vanilla-special" rows="2"></textarea>
+                        </div>
+                        <button class="add-to-cart">Add to Order</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>All cakes require 48 hours notice. Visit your nearest Krunchy Kreme to discuss custom designs.</p>
+        <p>&copy; 2024 Krunchy Kreme Café. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        function toggleCustomize(button) {
+            event.preventDefault();
+            const options = button.nextElementSibling;
+            options.style.display = options.style.display === 'block' ? 'none' : 'block';
+            
+            // Scroll to show the full options if they're being opened
+            if (options.style.display === 'block') {
+                options.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        }
+        
+        // Size selection functionality
+        document.querySelectorAll('.size-option').forEach(option => {
+            option.addEventListener('click', function() {
+                // Remove selected class from siblings
+                this.parentNode.querySelectorAll('.size-option').forEach(el => {
+                    el.classList.remove('selected');
+                });
+                // Add to clicked element
+                this.classList.add('selected');
+            });
+        });
+    </script>
+</body>
+</html>
